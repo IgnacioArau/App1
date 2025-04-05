@@ -7,31 +7,26 @@ Estudiantes:
 3. Maximiliano Rojas maximrojas@alumnos.uai.cl
 
 Explicación por archivo:
-1. main.c:
+1. main.c: 
 
 
-2. order.h:
+2. order.h: sirve para declarar las funciones que van a leer el archivo csv y la estructura de todos los pedidos de la pizzería
 
 
-3. order.c:
+3. order.c: implementa las funciones ya declaradas en order.h
 
 
-4. metrics.h:
+4. metrics.h: sirve para declarar las funciones
 
 
-5. metrics.c:
+5. metrics.c: calcula las métricas gracias a lo ya conocido en metrics.h
 
 
-6. utils.h:
+8. makefile: usa todos los archivos ya creados. primero crea los archivos main.o, metrics.o order.o
 
 
-7. utils.c:
-
-
-8. makefile:
-
-
-Uso de AI's para la evaluación:
+Uso de AI's para la evaluación: 
+En este trabajo se usaron intensivamente diversas inteligencias artificiales, tales son ChatGPT, Perplexity y Gemini. Su uso fue fundamental para crear código y comprenderlo. 
 
 
 Preguntas:
