@@ -1,5 +1,8 @@
 #ifndef ORDER_H
 #define ORDER_H
+//definimos que el máximo número de ventas que analizará el programa es de 1000 órdenes
+#define MAX_ORDER 1000
+#define INT_MAX 1000
 //   Se define la estructura
 typedef struct Order {
     int pizza_id;
@@ -17,8 +20,8 @@ typedef struct Order {
 } Order;
 
 //   Se definen las funciones
-void pms(const Order orders[], int cantidad);
-void pls(const Order orders[], int cantidad);
+void pms(const Order orders[], int cantidad, char *masVendida);
+void pls(const Order orders[], int cantidad, char *menosVendida);
 void dms(const Order orders[], int cantidad);
 void dls(const Order orders[], int cantidad);
 void dmsp(const Order orders[], int cantidad);
@@ -27,6 +30,5 @@ void apo(Order orders[], int *cantidad);
 void apd(Order orders[], int *cantidad);
 void ims(const Order orders[], int cantidad);
 void hp(const Order orders[], int cantidad);
-void upload_order(Order orders[], int *cantidad);
 void mostrarMenu();
 #endif
