@@ -185,6 +185,7 @@ char* pizzas_por_categoria(struct order *orders, int size) {
 }
 
 // Función principal para calcular métricas
+
 char* calculate_metric(const char *metric_name, struct order *orders, int size) {
     if (strcmp(metric_name, "pms") == 0) {
         return pizza_mas_vendida(orders, size);
@@ -206,4 +207,7 @@ char* calculate_metric(const char *metric_name, struct order *orders, int size) 
         return ingrediente_mas_vendido(orders, size);
     } else if (strcmp(metric_name, "hp") == 0) {
         return pizzas_por_categoria(orders, size);
-}
+    }
+    return NULL; 
+} 
+
