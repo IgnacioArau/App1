@@ -1,6 +1,6 @@
 #ifndef ORDER_H
 #define ORDER_H
-//Definimos la estructura de datos
+//   Se define la estructura
 typedef struct Order {
     int pizza_id;
     int order_id;
@@ -16,7 +16,7 @@ typedef struct Order {
     char pizza_name[100];
 } Order;
 
-//Definimos las funciones
+//   Se definen las funciones
 void pms(const Order orders[], int cantidad);
 void pls(const Order orders[], int cantidad);
 void dms(const Order orders[], int cantidad);
