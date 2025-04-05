@@ -1,0 +1,6 @@
+pizza_id,order_id,pizza_name_id,quantity,order_date,order_time,unit_price,total_price,pizza_size,pizza_category,pizza_ingredients,pizza_name
+82,2824,Margherita_82,4,2025-04-04,23:35:39,8.35,33.4,L,Vegetarian,"Tomato, Mozzarella, Basil",Margherita
+14,9935,Margherita_14,7,2025-04-04,23:55:32,5.48,38.36,S,Gourmet,"Tomato, Mozzarella, Basil",Margherita
+28,4811,BBQ Chicken_28,1,2025-04-04,23:55:39,13.42,13.42,L,Gourmet,"BBQ Sauce, Mozzarella, Chicken, Onions",BBQ Chicken
+84,9928,Veggie_84,8,2025-04-04,23:21:39,13.84,110.72,S,Special,"Tomato, Mozzarella, Bell Peppers, Olives, Onions",Veggie
+98,3615,Veggie_98,5,2025-04-04,23:55:39,7.33,36.65,M,Vegetarian,"Tomato, Mozzarella, Bell Peppers, Olives, Onions",Veggie
