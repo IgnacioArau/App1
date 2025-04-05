@@ -112,9 +112,23 @@ void print_order(const Order* order) {
 }
 
 // Implementacion de funciones ya declaradas en order.h
-void pms(const Order orders[], int cantidad) {
-    // Implementación pendiente
-    printf("Función pms no implementada aún\n");
+void pms(const Order orders[], int cantidad, char moda[]) {
+    int maxFrecuencia = 0;
+
+    for (int i = 0; i < cantidad; i++) {
+        int frecuencia = 0;
+
+        for (int j = 0; j < cantidad; j++) {
+            if (strcmp(orders[i].pizza_name_id, orders[j].pizza_name_id) == 0) {
+                frecuencia++;
+            }
+        }
+
+        if (frecuencia > maxFrecuencia) {
+            maxFrecuencia = frecuencia;
+            strcpy(moda, orders[i].pizza_name_id);
+        }
+    }
 }
 
 void pls(const Order orders[], int cantidad) {
