@@ -9,7 +9,7 @@ void free_order(Order* order);
 Order* create_order_from_csv(const char* csv_line) {
     Order* new_order = (Order*)malloc(sizeof(Order));
     if (new_order == NULL) {
-        perror("Error al asignar memoria para la orden");
+        perror("Error al asignar memoria para la orden de pizza");
         return NULL;
     }
 
@@ -94,18 +94,18 @@ void free_order(Order* order) {
 void print_order(const Order* order) {
     if (order != NULL) {
         printf("Pizza ID: %d\n", order->pizza_id);
-        printf("Order ID: %d\n", order->order_id);
+        printf("Orden ID: %d\n", order->order_id);
         printf("Pizza Name ID: %s\n", order->pizza_name_id);
-        printf("Quantity: %d\n", order->quantity);
-        printf("Order Date: %s\n", order->order_date);
-        printf("Order Time: %s\n", order->order_time);
-        printf("Unit Price: %.2f\n", order->unit_price);
-        printf("Total Price: %.2f\n", order->total_price);
-        printf("Pizza Size: %s\n", order->pizza_size);
-        printf("Pizza Category: %s\n", order->pizza_category);
-        printf("Pizza Ingredients: %s\n", order->pizza_ingredients);
-        printf("Pizza Name: %s\n", order->pizza_name);
-        printf("--------------------\n");
+        printf("Cantidad: %d\n", order->quantity);
+        printf("Fecha Orden: %s\n", order->order_date);
+        printf("Tiempo Orden: %s\n", order->order_time);
+        printf("Precio Unidad: %.2f\n", order->unit_price);
+        printf("Precio Total: %.2f\n", order->total_price);
+        printf("Tamaño Pizza: %s\n", order->pizza_size);
+        printf("Categoría Pizza: %s\n", order->pizza_category);
+        printf("Ingredientes Pizza: %s\n", order->pizza_ingredients);
+        printf("Nombre Pizza: %s\n", order->pizza_name);
+        printf("-------------------------\n");
     } else {
         printf("La orden es NULL.\n");
     }
@@ -169,16 +169,16 @@ void upload_order(Order orders[], int *cantidad) {
 
 void mostrarMenu() {
     printf("\n===== MENÚ PRINCIPAL =====\n");
-    printf("1. PMS - Pizzas Más Solicitadas\n");
-    printf("2. PLS - Pizzas Menos Solicitadas\n");
-    printf("3. DMS - Días con Más Solicitudes\n");
-    printf("4. DLS - Días con Menos Solicitudes\n");
-    printf("5. DMSP - Día con Más Solicitudes por Pizza\n");
-    printf("6. DLSP - Día con Menos Solicitudes por Pizza\n");
-    printf("7. APO - Agregar Pizza por Orden\n");
-    printf("8. APD - Agregar Pizza por Día\n");
-    printf("9. IMS - Ingredientes Más Solicitados\n");
-    printf("10. HP - Historial de Pedidos\n");
+    printf("1. PMS - Pizzas más vendidas\n");
+    printf("2. PLS - Pizzas menos vendidas\n");
+    printf("3. DMS - Fechas con más ventass\n");
+    printf("4. DLS - Fechas con menos ventas\n");
+    printf("5. DMSP - Fechas con más ventas en términos de cantidad\n");
+    printf("6. DLSP - Fechas con menos ventas en términos de cantidad de pizzas\n");
+    printf("7. APO - Promedio de pizzas por ordenes\n");
+    printf("8. APD - Promedio de pizzas por día\n");
+    printf("9. IMS - Ingredientes más vendidos\n");
+    printf("10. HP - Cantidad de pizzas por categoría vendidas\n");
     printf("11. Subir Orders\n");
     printf("0. Salir\n");
     printf("Ingrese su opción: ");
