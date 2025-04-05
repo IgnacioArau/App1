@@ -1,4 +1,3 @@
-// order.c
 #include "order.h"
 #include <stdio.h>
 #include <stdlib.h>
