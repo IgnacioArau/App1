@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     int opcion = 0;
 
     
-  // mostrar el menú
+  // muestra el menu
     while (opcion != 11) {
         mostrarMenu();
         printf("Selecciona una opción: ");
@@ -38,11 +38,9 @@ int main(int argc, char *argv[]) {
             hp(orders, cantidad);
         } else if (opcion == 11) {
             printf("Saliendo del programa...\n");
-        } else {
-            printf("Opción no válida, por favor ingresa una opción válida.\n");
         }
     }
 
     return 0;
 }
-}
+
