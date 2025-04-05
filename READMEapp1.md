@@ -6,6 +6,13 @@ Estudiantes:
 2. Ignacio Arau iarau@alumnos.uai.cl
 3. Maximiliano Rojas maximrojas@alumnos.uai.cl
 
+Explicación por archivo:
+1. main.c:
+   
+2. order.c: utiliza el order.h para 
+
+3. order.h:
+
 
 Uso de AI's para la evaluación:
 
