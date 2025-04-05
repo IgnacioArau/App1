@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Function prototype to prevent implicit declaration warning
+// Prototipo de funcion para prevenir el mensaje de declaracion implicita
 void free_order(Order* order);
 
 Order* create_order_from_csv(const char* csv_line) {
@@ -112,7 +112,7 @@ void print_order(const Order* order) {
     }
 }
 
-// Implementations of functions declared in order.h
+// Implementacion de funciones ya declaradas en order.h
 void pms(const Order orders[], int cantidad) {
     // Implementación pendiente
     printf("Función pms no implementada aún\n");
