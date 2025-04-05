@@ -27,5 +27,6 @@ void apo(Order orders[], int *cantidad);
 void apd(Order orders[], int *cantidad);
 void ims(const Order orders[], int cantidad);
 void hp(const Order orders[], int cantidad);
+void upload_order(Order orders[], int *cantidad);
 void mostrarMenu();
 #endif
