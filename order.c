@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct order* create_order_from_csv(const char* csv_line) {
-    struct order* new_order = (struct order*)malloc(sizeof(struct order));
+Order* create_order_from_csv(const char* csv_line) {
+    Order* new_order = (Order*)malloc(sizeof(Order));
     if (new_order == NULL) {
         perror("Error al asignar memoria para la orden");
         return NULL;
@@ -25,40 +25,47 @@ struct order* create_order_from_csv(const char* csv_line) {
     while (token != NULL && i < 12) {
         switch (i) {
             case 0:
-                new_order->pizza_id = strtod(token, NULL);
+                new_order->pizza_id = atoi(token);
                 break;
             case 1:
-                new_order->order_id = strtod(token, NULL);
+                new_order->order_id = atoi(token);
                 break;
             case 2:
-                new_order->pizza_name_id = strdup(token);
+                strncpy(new_order->pizza_name_id, token, sizeof(new_order->pizza_name_id) - 1);
+                new_order->pizza_name_id[sizeof(new_order->pizza_name_id) - 1] = '\0';
                 break;
             case 3:
-                new_order->quantity = strtod(token, NULL);
+                new_order->quantity = atoi(token);
                 break;
             case 4:
-                new_order->order_date = strdup(token);
+                strncpy(new_order->order_date, token, sizeof(new_order->order_date) - 1);
+                new_order->order_date[sizeof(new_order->order_date) - 1] = '\0';
                 break;
             case 5:
-                new_order->order_time = strdup(token);
+                strncpy(new_order->order_time, token, sizeof(new_order->order_time) - 1);
+                new_order->order_time[sizeof(new_order->order_time) - 1] = '\0';
                 break;
             case 6:
-                new_order->unit_price = strtod(token, NULL);
+                new_order->unit_price = strtof(token, NULL);
                 break;
             case 7:
-                new_order->total_price = strtod(token, NULL);
+                new_order->total_price = strtof(token, NULL);
                 break;
             case 8:
-                new_order->pizza_size = strdup(token);
+                strncpy(new_order->pizza_size, token, sizeof(new_order->pizza_size) - 1);
+                new_order->pizza_size[sizeof(new_order->pizza_size) - 1] = '\0';
                 break;
             case 9:
-                new_order->pizza_category = strdup(token);
+                strncpy(new_order->pizza_category, token, sizeof(new_order->pizza_category) - 1);
+                new_order->pizza_category[sizeof(new_order->pizza_category) - 1] = '\0';
                 break;
             case 10:
-                new_order->pizza_ingredients = strdup(token);
+                strncpy(new_order->pizza_ingredients, token, sizeof(new_order->pizza_ingredients) - 1);
+                new_order->pizza_ingredients[sizeof(new_order->pizza_ingredients) - 1] = '\0';
                 break;
             case 11:
-                new_order->pizza_name = strdup(token);
+                strncpy(new_order->pizza_name, token, sizeof(new_order->pizza_name) - 1);
+                new_order->pizza_name[sizeof(new_order->pizza_name) - 1] = '\0';
                 break;
         }
         token = strtok(NULL, ",");
@@ -69,32 +76,25 @@ struct order* create_order_from_csv(const char* csv_line) {
 
     if (i != 12) {
         fprintf(stderr, "Advertencia: No se pudieron parsear todos los campos de la línea CSV.\n");
-        free_order(new_order);
+        free(new_order);
         return NULL;
     }
 
     return new_order;
 }
 
-void free_order(struct order* order) {
+void free_order(Order* order) {
     if (order != NULL) {
-        free(order->pizza_name_id);
-        free(order->order_date);
-        free(order->order_time);
-        free(order->pizza_size);
-        free(order->pizza_category);
-        free(order->pizza_ingredients);
-        free(order->pizza_name);
         free(order);
     }
 }
 
-void print_order(const struct order* order) {
+void print_order(const Order* order) {
     if (order != NULL) {
-        printf("Pizza ID: %.2f\n", order->pizza_id);
-        printf("Order ID: %.2f\n", order->order_id);
+        printf("Pizza ID: %d\n", order->pizza_id);
+        printf("Order ID: %d\n", order->order_id);
         printf("Pizza Name ID: %s\n", order->pizza_name_id);
-        printf("Quantity: %.2f\n", order->quantity);
+        printf("Quantity: %d\n", order->quantity);
         printf("Order Date: %s\n", order->order_date);
         printf("Order Time: %s\n", order->order_time);
         printf("Unit Price: %.2f\n", order->unit_price);
@@ -108,3 +108,18 @@ void print_order(const struct order* order) {
         printf("La orden es NULL.\n");
     }
 }
+
+// You also need to implement all the functions declared in the header
+void pms(const Order orders[], int cantidad) {
+    // Implementation needed
+}
+
+void pls(const Order orders[], int cantidad) {
+    // Implementation needed
+}
+
+void dms(const Order orders[], int cantidad) {
+    // Implementation needed
+}
+
+// ... and so on for all remaining functions
