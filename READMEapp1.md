@@ -28,6 +28,8 @@ Explicación por archivo:
 Uso de AI's para la evaluación: 
 En este trabajo se usaron intensivamente diversas inteligencias artificiales, tales son ChatGPT, Perplexity y Gemini. Su uso fue fundamental para crear código y comprenderlo. 
 
+Razones de diseño:
+
 
 Preguntas:
 ¿Qué fue lo más complejo o interesante de la tarea?
