@@ -179,10 +179,6 @@ char* pizzas_por_categoria(struct order *orders, int size) {
             sprintf(buffer, "%s: %d", category, orders[i].quantity);
             strcat(result, buffer);
             strcat(result, "\n");
-        } else {
-            // Actualizar cantidad si ya existe la categoría
-            // Este paso es más complejo y requiere parsear el string resultante.
-            // Aquí se muestra una forma simplificada que no es exacta.
         }
     }
     return result;
@@ -210,6 +206,4 @@ char* calculate_metric(const char *metric_name, struct order *orders, int size) 
         return ingrediente_mas_vendido(orders, size);
     } else if (strcmp(metric_name, "hp") == 0) {
         return pizzas_por_categoria(orders, size);
-    }
-    return NULL; // Métrica no reconocida
 }
